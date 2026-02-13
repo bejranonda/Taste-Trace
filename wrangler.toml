@@ -1,0 +1,18 @@
+name = "tastetrace"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+# Cloudflare D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "tastetrace-db"
+database_id = "placeholder-will-be-generated"
+
+# Workers AI Binding
+[ai]
+binding = "AI"
+
+# Environment variables (set via Cloudflare Dashboard or wrangler secrets)
+# [vars]
+# Example: API_KEY = "your-api-key"
