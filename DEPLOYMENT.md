@@ -8,6 +8,12 @@ This guide explains how to deploy TasteTrace to Cloudflare Pages with D1 databas
 2. Node.js 18+ installed
 3. Wrangler CLI installed (`npm install -g wrangler`)
 
+## Key Features (No API Keys Required!)
+
+- **Map**: Leaflet + OpenStreetMap (100% free, unlimited)
+- **Database**: Cloudflare D1 (5GB free)
+- **AI**: Cloudflare Workers AI (10k req/day free)
+
 ## Step 1: Install Dependencies
 
 ```bash
@@ -80,6 +86,17 @@ Set these in Cloudflare Dashboard > Workers & Pages > Your Project > Settings > 
 |----------|-------------|----------|
 | None currently | - | - |
 
+## Map Integration
+
+TasteTrace uses **Leaflet + OpenStreetMap** for mapping. No configuration needed!
+
+- **No API key required**
+- **No usage limits**
+- **No credit card needed**
+- Works out of the box after deployment
+
+The map automatically loads tiles from OpenStreetMap's free CDN.
+
 ## Free Tier Limits
 
 ### Cloudflare Pages
@@ -125,22 +142,39 @@ npm install
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────┐
-│                 Cloudflare Pages                     │
-│  ┌───────────────┐    ┌──────────────────────────┐  │
-│  │   Frontend    │    │   Pages Functions        │  │
-│  │  (React/Vite) │───▶│   /api/restaurants       │  │
-│  │               │    │   /api/ai-summary        │  │
-│  └───────────────┘    └───────────┬──────────────┘  │
-│                                   │                  │
-│                       ┌───────────┴───────────┐      │
-│                       ▼                       ▼      │
-│               ┌──────────────┐      ┌─────────────┐ │
-│               │  D1 Database │      │  Workers AI │ │
-│               │  (SQLite)    │      │  (LLM)      │ │
-│               └──────────────┘      └─────────────┘ │
-└─────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────┐
+│                    Cloudflare Pages                        │
+│                                                            │
+│  ┌─────────────────────┐    ┌──────────────────────────┐  │
+│  │     Frontend        │    │   Pages Functions        │  │
+│  │  ┌───────────────┐  │    │   /api/restaurants       │  │
+│  │  │ React + Vite  │  │───▶│   /api/ai-summary        │  │
+│  │  ├───────────────┤  │    └───────────┬──────────────┘  │
+│  │  │ Leaflet Map   │  │                │                  │
+│  │  │ Tailwind CSS  │  │    ┌───────────┴───────────┐      │
+│  │  └───────────────┘  │    ▼                       ▼      │
+│  └─────────────────────┘ ┌──────────┐    ┌─────────────┐  │
+│                          │ D1 DB    │    │ Workers AI  │  │
+│                          │ (SQLite) │    │ (Llama 3.1) │  │
+│                          └──────────┘    └─────────────┘  │
+└───────────────────────────────────────────────────────────┘
+                           │
+                           ▼
+                  ┌─────────────────┐
+                  │  OpenStreetMap  │
+                  │  (Free Tiles)   │
+                  └─────────────────┘
 ```
+
+## Technology Stack
+
+| Layer | Technology | Cost |
+|-------|------------|------|
+| Frontend | React + Vite + Tailwind | Free |
+| Map | Leaflet + OpenStreetMap | Free |
+| Hosting | Cloudflare Pages | Free |
+| Database | Cloudflare D1 | Free (5GB) |
+| AI | Cloudflare Workers AI | Free (10k/day) |
 
 ## Support
 
