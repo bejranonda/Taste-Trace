@@ -3,16 +3,33 @@ compatibility_date = "2024-12-01"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = "dist"
 
+# ============================================
 # Cloudflare D1 Database
+# ============================================
+# Run: npx wrangler d1 create tastetrace-db
+# Then replace the database_id below with your actual ID
 [[d1_databases]]
 binding = "DB"
 database_name = "tastetrace-db"
-database_id = "placeholder-will-be-generated"
+database_id = "REPLACE_WITH_YOUR_DATABASE_ID"
 
+# ============================================
 # Workers AI Binding
+# ============================================
+# This is configured automatically when deploying to Cloudflare Pages
+# The AI binding is available as `env.AI` in Pages Functions
 [ai]
 binding = "AI"
 
-# Environment variables (set via Cloudflare Dashboard or wrangler secrets)
-# [vars]
-# Example: API_KEY = "your-api-key"
+# ============================================
+# Environment Variables (set via Cloudflare Dashboard)
+# ============================================
+# Go to: Workers & Pages > tastetrace > Settings > Environment Variables
+# Add any secrets there - they will NOT be exposed to the client
+
+# ============================================
+# Local Development
+# ============================================
+# For local dev with wrangler:
+# 1. Set CLOUDFLARE_API_TOKEN in your shell or .env file
+# 2. Run: npm run cf:dev
