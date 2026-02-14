@@ -4,23 +4,23 @@
 
 [![Deploy to Cloudflare Pages](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/bejranonda/Taste-Trace)
 
-AI-powered restaurant review aggregator that helps you discover the best dining experiences in Thailand.
-
-![TasteTrace Screenshot](https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=1200)
+Restaurant discovery app that helps you find great dining experiences in Thailand.
 
 ## ✨ Features
 
 ### Core Features
 - 🗺️ **Interactive Map** - Real OpenStreetMap with restaurant markers (100% free, no API key)
-- 🤖 **AI Summary Insights** - Consolidated pros/cons analysis using Workers AI
-- 🎬 **Influencer Reviews** - Video reviews from YouTube/TikTok food creators
-- 📊 **Credibility Scoring** - Trust scores based on review consistency
-- 📈 **Review Trends** - Track restaurant quality over time (2021-2024)
+- 🔗 **Google Maps Navigation** - Direct links to navigate to restaurants
 - 🌍 **Multi-Language** - Thai 🇹🇭, English 🇬🇧, German 🇩🇪
 
+### Data Philosophy
+- **Only real, verifiable data** - No fake reviews or ratings
+- **No placeholder images** - UI uses icons instead of stock photos
+- **Transparent sources** - All restaurant info links to Google Maps
+
 ### Map Features
-- Custom rating-based markers (🟠 4.5+, 🟢 4.0-4.4, ⚪ <4.0)
-- Fly-to animation when selecting restaurants
+- Custom restaurant markers
+- Fly-to animation when selecting restaurant
 - Google Maps navigation integration
 - Popup previews with quick info
 
@@ -82,29 +82,7 @@ See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed Cloudflare deployment instruct
 | Endpoint | Method | Description |
 |----------|--------|-------------|
 | `/api/restaurants` | GET | List restaurants with filtering |
-| `/api/ai-summary` | POST | Generate AI summary from reviews |
-
-### Example Requests
-
-```bash
-# Get restaurants
-curl "https://tastetrace.pages.dev/api/restaurants?filter=shell&lang=th"
-
-# Generate AI summary
-curl -X POST "https://tastetrace.pages.dev/api/ai-summary" \
-  -H "Content-Type: application/json" \
-  -d '{"restaurantName":"Jae Fai","reviews":"Great crab omelet...","language":"th"}'
-```
-
-## 🏷️ Supported Review Sources
-
-| Source | Badge | Description |
-|--------|-------|-------------|
-| Michelin Guide | ⭐ | Michelin-starred restaurants |
-| เชลล์ชวนชิม | 🥣 | Shell Chuan Chim (Thai food guide) |
-| เปิบพิสดาร | 😋 | Peb Pisatarn (Thai food show) |
-| Google Maps | - | User reviews |
-| Wongnai | - | Thai local reviews |
+| `/api/ai-summary` | POST | Generate AI summary (requires real data) |
 
 ## 📁 Project Structure
 
@@ -135,30 +113,20 @@ TasteTrace uses **Leaflet + OpenStreetMap** for free, unlimited mapping:
 - **No usage limits**
 - **No credit card needed**
 
-```jsx
-// Example: Adding a restaurant marker
-<Marker
-  position={[13.7563, 100.5018]}
-  icon={createRestaurantIcon(4.8)}
->
-  <Popup>Restaurant info...</Popup>
-</Marker>
-```
-
 ## 🗺️ Roadmap
 
 See [IMPROVEMENTS.md](./IMPROVEMENTS.md) for detailed feature planning.
 
 ### High Priority
+- [ ] Add more real restaurants with verified data
 - [ ] Dietary filters (vegan, halal, gluten-free)
-- [ ] AI-powered recommendations
-- [ ] Real-time wait times
+- [ ] Real-time data from Google Places API
 - [ ] Price tracking
 
 ### Medium Priority
-- [ ] Social features (share lists, follow friends)
+- [ ] Social features (share lists)
 - [ ] Food journey tracking
-- [ ] Advanced natural language search
+- [ ] Advanced search
 
 ### Future
 - [ ] Mobile app (React Native)
@@ -174,13 +142,15 @@ See [IMPROVEMENTS.md](./IMPROVEMENTS.md) for detailed feature planning.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+**Note**: Please only add real, verifiable restaurant data. No fake reviews or placeholder images.
+
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
 ## 🙏 Acknowledgments
 
-- Restaurant data inspired by Thai street food culture
+- Restaurant data from real, verifiable sources
 - Maps powered by [OpenStreetMap](https://www.openstreetmap.org) & [Leaflet](https://leafletjs.com)
 - Icons by [Lucide](https://lucide.dev)
 - Built with [Cloudflare](https://cloudflare.com) infrastructure
