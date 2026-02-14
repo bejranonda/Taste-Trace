@@ -11,7 +11,7 @@ pages_build_output_dir = "dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "tastetrace-db"
-database_id = "REPLACE_WITH_YOUR_DATABASE_ID"
+database_id = "e4062502-5af5-4b86-82f3-ac573c1be3ac"
 
 # ============================================
 # Workers AI Binding
