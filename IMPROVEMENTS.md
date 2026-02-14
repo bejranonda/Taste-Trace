@@ -4,6 +4,13 @@ Based on research for restaurant review apps in 2024-2025.
 
 ## ✅ Completed Features
 
+### 🚀 EatJourney Prototype (v2.0.0-alpha)
+- **Influencer Hub**: Video review integration
+- **AI Analytics**: Credibility score & trend graphs
+- **Queue Prediction**: Live wait time widget
+- **Premium Map Pins**: Award-specific markers (Michelin, Shell Chuan Chim)
+- **UI Prototypes**: Dish Scan, Foodie Match, Route Planner
+
 ### 🗺️ Free Map Integration (v1.0.0)
 - **Implementation**: Leaflet + OpenStreetMap
 - **Cost**: 100% Free, no API key needed

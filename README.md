@@ -13,6 +13,20 @@ Restaurant discovery app that helps you find great dining experiences in Thailan
 - 🔗 **Google Maps Navigation** - Direct links to navigate to restaurants
 - 🌍 **Multi-Language** - Thai 🇹🇭, English 🇬🇧, German 🇩🇪
 
+### 🚀 EatJourney Prototype Features (New)
+- 🎥 **Influencer Hub** - Integrated video reviews from YouTube & TikTok with timestamp jumps
+- 🤖 **AI Analysis** - Pros/Cons summaries, Credibility Scores, and Sentiment Trend graphs
+- ⏳ **Queue Prediction** - Live wait times and "Best Time to Visit" charts
+- 📷 **Dish Recognition** - AI-powered dish scanning (UI Prototype)
+- 🤝 **Foodie Match** - Find dining partners for specific restaurants (UI Prototype)
+- 🗺️ **Food Trip Planner** - Auto-generate eating itineraries (UI Prototype)
+
+### Map Features
+- **Premium Pins** - Special icons for "Michelin" (⭐) and "Shell Chuan Chim" (🐚) awards
+- Custom color-coded markers (orange/default, green/vegan, blue/halal)
+- Fly-to animation when selecting restaurant
+- Popup previews with quick info
+
 ### Dietary & Preferences
 - 🌱 **Vegan Filter** - Find plant-based restaurants
 - 🕌 **Halal Filter** - Discover halal-certified dining
