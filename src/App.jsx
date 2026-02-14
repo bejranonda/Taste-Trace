@@ -15,29 +15,6 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
 });
 
-// Custom restaurant marker
-const createRestaurantIcon = (dietary = []) => {
-  let color = '#f97316'; // orange default
-  if (dietary.includes('vegan')) color = '#22c55e';
-  else if (dietary.includes('halal')) color = '#3b82f6';
-
-  return L.divIcon({
-    className: 'custom-marker',
-    html: `<div style="
-      background: ${color};
-      width: 30px;
-      height: 30px;
-      border-radius: 50% 50% 50% 0;
-      transform: rotate(-45deg);
-      border: 3px solid white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-    "></div>`,
-    iconSize: [30, 30],
-    iconAnchor: [15, 30],
-    popupAnchor: [0, -30]
-  });
-};
-
 // --- Internationalization (i18n) ---
 const TRANSLATIONS = {
   th: {
@@ -473,6 +450,7 @@ export default function App() {
   const [language, setLanguage] = useState('th');
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFeature, setActiveFeature] = useState(null); // 'dishScan', 'foodieMatch', 'routePlanner'
+  const [copied, setCopied] = useState(false);
 
 
   // Phase 3: User Taste Profile
