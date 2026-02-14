@@ -13,13 +13,24 @@ Restaurant discovery app that helps you find great dining experiences in Thailan
 - 🔗 **Google Maps Navigation** - Direct links to navigate to restaurants
 - 🌍 **Multi-Language** - Thai 🇹🇭, English 🇬🇧, German 🇩🇪
 
+### Dietary & Preferences
+- 🌱 **Vegan Filter** - Find plant-based restaurants
+- 🕌 **Halal Filter** - Discover halal-certified dining
+- 🌾 **Gluten-Free Filter** - Gluten-sensitive options
+- ❤️ **Favorites** - Save your favorite restaurants (localStorage)
+
+### Discovery & Social
+- 🔍 **Advanced Search** - Search by name or category
+- 📱 **Social Sharing** - Share restaurants via Web Share API
+- 🏆 **Gamification** - Earn achievements (Explorer, Foodie, Sharer)
+
 ### Data Philosophy
 - **Only real, verifiable data** - No fake reviews or ratings
 - **No placeholder images** - UI uses icons instead of stock photos
 - **Transparent sources** - All restaurant info links to Google Maps
 
 ### Map Features
-- Custom restaurant markers
+- Custom color-coded markers (orange/default, green/vegan, blue/halal)
 - Fly-to animation when selecting restaurant
 - Google Maps navigation integration
 - Popup previews with quick info
@@ -66,6 +77,7 @@ Open http://localhost:5173 to view the app.
 ## 📦 Deployment
 
 See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed Cloudflare deployment instructions.
+See [SETUP.md](./SETUP.md) for API token configuration.
 
 ### Quick Deploy to Cloudflare Pages
 
@@ -102,7 +114,8 @@ tastetrace/
 ├── vite.config.js           # Vite configuration
 ├── tailwind.config.js       # Tailwind configuration
 ├── DEPLOYMENT.md            # Deployment guide
-└── IMPROVEMENTS.md          # Feature roadmap
+├── IMPROVEMENTS.md          # Feature roadmap
+└── SETUP.md                 # Setup instructions
 ```
 
 ## 🗺️ Map Integration
@@ -117,18 +130,21 @@ TasteTrace uses **Leaflet + OpenStreetMap** for free, unlimited mapping:
 
 See [IMPROVEMENTS.md](./IMPROVEMENTS.md) for detailed feature planning.
 
-### High Priority
+### ✅ Completed (v1.1.0)
+- [x] Leaflet Map Integration
+- [x] Dietary Filters (vegan, halal, gluten-free)
+- [x] User Taste Profiles (favorites)
+- [x] Social Sharing (Web Share API)
+- [x] Advanced Search
+- [x] Gamification (achievements)
+
+### 🔜 High Priority
+- [ ] AI Recommendations (Cloudflare Workers AI)
 - [ ] Add more real restaurants with verified data
-- [ ] Dietary filters (vegan, halal, gluten-free)
 - [ ] Real-time data from Google Places API
 - [ ] Price tracking
 
-### Medium Priority
-- [ ] Social features (share lists)
-- [ ] Food journey tracking
-- [ ] Advanced search
-
-### Future
+### 🔮 Future
 - [ ] Mobile app (React Native)
 - [ ] AR menu preview
 - [ ] Reservation integration
