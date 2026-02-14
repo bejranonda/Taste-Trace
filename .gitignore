@@ -77,7 +77,7 @@ yarn.lock
 pnpm-lock.yaml
 
 # Claude Code project settings (keep local only)
-.claude/settings.local.json
+.claude/
 
 # Backup files
 *.bak
